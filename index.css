@@ -1,0 +1,445 @@
+Voy a crear un archivo CSS3 para tu página de Servicios Multifrios. Este CSS estará basado en la estructura del HTML que me compartiste, pero lo organizaré mejor y añadiré algunas mejoras.
+
+```css
+/* 
+   Servicios Multifrios - Hoja de estilos
+   Autor: Servicios Multifrios
+   Fecha: 2025
+*/
+
+/* ========== VARIABLES Y RESET ========== */
+:root {
+    --primary-color: #058ee9; /* Azul principal */
+    --accent-color: #036db1; /* Azul más oscuro para hover */
+    --secondary-color: #f5f9fd; /* Fondo claro */
+    --text-color: #333333; /* Texto principal */
+    --light-text: #ffffff; /* Texto claro */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra estándar */
+    --transition: all 0.3s ease; /* Transición estándar */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+/* ========== HEADER ========== */
+header {
+    background-image: url('imagenes/Fondo de encabezado.png');
+    background-size: cover;
+    background-position: center;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tagline {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+    background-image: linear-gradient(rgba(5, 142, 233, 0.8), rgba(201, 248, 248, 0.8)), 
+                     url('imagenes/Fondo de encabezado.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--light-text);
+    padding: 7rem 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+}
+
+/* ========== BUTTONS ========== */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+/* ========== CONTAINER AND SECTIONS ========== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+section {
+    padding: 4rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: var(--primary-color);
+    bottom: -10px;
+    left: 25%;
+}
+
+.section-title p {
+    max-width: 700px;
+    margin: 1.5rem auto 0;
+    color: #666;
+}
+
+/* ========== SERVICES SECTION ========== */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-card img {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: var(--light-text);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.service-card p {
+    flex-grow: 1;
+    color: #555;
+}
+
+/* ========== ABOUT SECTION ========== */
+.about {
+    background-color: var(--secondary-color);
+    padding: 5rem 0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-image {
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.about-image img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.about-text h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+/* ========== CONTACT SECTION ========== */
+.contact {
+    padding: 5rem 0;
+}
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.contact-form {
+    background-color: var(--secondary-color);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.contact-form h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #444;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(5, 142, 233, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.whatsapp-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--secondary-color);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.whatsapp-contact h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.whatsapp-contact p {
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.qr-code {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 1.5rem;
+    border: 8px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
+}
+
+.qr-code:hover {
+    transform: scale(1.05);
+}
+
+/* ========== FOOTER ========== */
+footer {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: 3rem 0;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* ========== VIDEO SECTION ========== */
+.video-section {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    margin-top: 2rem;
+}
+
+.video-section video {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.services, .about-content, .contact-methods {
+    animation: fadeIn 1s ease-out;
+}
+
+/* ========== RESPONSIVE STYLES ========== */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section-title h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content,
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-image {
+        order: 1;
+    }
+    
+    .about-text {
+        order: 2;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    .logo {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .services {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .hero {
+        padding: 4rem 1.5rem;
+    }
+    
+    .btn {
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+```
+
+He creado un archivo CSS3 completo y moderno para tu página web de Servicios Multifrios. Este archivo incluye:
+
+1. **Sistema de variables CSS** para mantener la consistencia en colores y estilos
+2. **Estructura organizada** con secciones claramente definidas
+3. **Diseño responsivo** con media queries para diferentes tamaños de pantalla
+4. **Efectos interactivos** como transiciones suaves, sombras y transformaciones
+5. **Animaciones** para mejorar la experiencia de usuario
+6. **Mejoras visuales** en cada sección, incluyendo:
+   - Tarjetas de servicio con efectos al pasar el cursor
+   - Formulario de contacto con estilos de foco
+   - Código QR con bordes y efectos
+   - Estilos mejorados para botones
+   - Formato optimizado para la sección de video
+
+Para implementar este CSS:
+
+1. Crea un archivo llamado `style.css` en la misma carpeta donde tienes tu archivo HTML
+2. Copia el código CSS que he proporcionado
+3. Asegúrate de que tu archivo HTML tenga un enlace a este archivo CSS. Debería añadirse dentro de la etiqueta `<head>` así:
+   ```html
+   <link rel="stylesheet" href="style.css">
+   ```
+
+¿Hay algún aspecto específico del diseño que te gustaría modificar o alguna característica adicional que quieras incorporar?
